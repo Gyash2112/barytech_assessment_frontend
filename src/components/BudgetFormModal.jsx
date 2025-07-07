@@ -16,6 +16,10 @@ const BudgetFormModal = ({ onSubmit }) => {
 
   const submit = () => {
     onSubmit(form);
+    setForm({
+      month: '',
+      categoryBudgets: categories.map((cat) => ({ category: cat, limit: '' })),
+    });
   };
 
   return (

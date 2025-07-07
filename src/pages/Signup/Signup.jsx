@@ -13,7 +13,7 @@ const Signup = () => {
     name: '',
     email: '',
     password: '',
-    role: 'child', // default role
+    role: 'parent',
   });
 
   const [loading, setLoading] = useState(false);
@@ -46,7 +46,7 @@ const Signup = () => {
 
   return (
     <div style={styles.container}>
-      <h2 style={styles.heading}>Sign Up</h2>
+      <h2 style={styles.heading}>Sign Up as Parent</h2>
 
       <form
         onSubmit={handleSubmit}
@@ -81,16 +81,6 @@ const Signup = () => {
           style={styles.input}
           required
         />
-
-        <select
-          name="role"
-          value={form.role}
-          onChange={handleChange}
-          style={styles.input}
-        >
-          <option value="child">Child</option>
-          <option value="parent">Parent</option>
-        </select>
 
         <button type="submit" disabled={loading} style={styles.button}>
           {loading ? 'Signing up...' : 'Sign Up'}
